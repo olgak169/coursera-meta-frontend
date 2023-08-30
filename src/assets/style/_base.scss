@@ -1,0 +1,102 @@
+@import "variables";
+:root {
+    --clr-primary: #495E57;
+    --clr-secondary: #F4CE14;
+    --clr-neutral-dark: #657379;
+    --clr-neutral-light: #F5F5F5;
+}
+
+html {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+}
+body {
+    height: 100%;
+    font-family: Karla, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+#root {
+    height: 100%;
+}
+.flow > * + * {
+    margin-top: var(--flow-space, 1em);
+  }
+.container {
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+.vh_40 {
+    min-height: 40vh;
+}
+.bg_primary {
+    background: var(--clr-primary);
+}
+.btn_light {
+    background-color: var(--clr-secondary);
+    color: #000000;
+    text-transform: uppercase;
+    padding: 0.5rem 1.3rem;
+    border-radius: $b_rad_small;
+}
+
+.hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    min-height: 40vh;
+    position: relative;
+    isolation: isolate;
+    color: var(--clr-neutral-light);
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        z-index: -1;
+    }
+
+    @include breaks(large) {
+        min-height: 50vh;
+    }
+}
+.hero_home {
+    background-image: url('../img/hero_bg_01.jpg');
+}
+.hero_general {
+    background-image: url('../img/hero_bg_03.jpg');
+}
+.hero_booking {
+    background-image: url('../img/hero_bg_02.png');
+}
+.hero__content {
+    padding: 4rem 0;
+    h1 {
+        font-size: var(--step-5);
+        font-family: 'Markazi Text';
+        color: var(--clr-secondary);
+    }
+    h2 {
+        font-size: var(--step-3);
+        color: var(--clr-secondary);
+    }
+    a {
+        display: inline-block;
+        margin: 2rem 0;
+    }
+}
+.menu {
+    width: 100%;
+    margin: 2rem auto;
+     h2 {
+        font-size: var(--step-3);
+     }
+}
+.dish-item {
+    padding: var(--step-1) 0;
+    border-bottom: 1px solid var(--clr-neutral-dark);
+}

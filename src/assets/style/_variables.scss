@@ -1,0 +1,56 @@
+:root {
+  --step--2: clamp(0.56rem, calc(0.74rem + -0.23vw), 0.69rem);
+
+  /* Step -1: 13.33px → 12.00px */
+  --step--1: clamp(0.75rem, calc(0.86rem + -0.15vw), 0.83rem);
+
+  /* Step 0: 16.00px → 16.00px */
+  --step-0: clamp(1rem, calc(1rem + 0vw), 1rem);
+
+  /* Step 1: 19.20px → 21.33px */
+  --step-1: clamp(1.2rem, calc(1.15rem + 0.24vw), 1.33rem);
+
+  /* Step 2: 23.04px → 28.43px */
+  --step-2: clamp(1.44rem, calc(1.32rem + 0.6vw), 1.78rem);
+
+  /* Step 3: 27.65px → 37.90px */
+  --step-3: clamp(1.73rem, calc(1.5rem + 1.14vw), 2.37rem);
+
+  /* Step 4: 33.18px → 50.52px */
+  --step-4: clamp(2.07rem, calc(1.69rem + 1.93vw), 3.16rem);
+
+  /* Step 5: 39.81px → 67.34px */
+  --step-5: clamp(2.49rem, calc(1.88rem + 3.06vw), 4.21rem);
+}
+
+$break_p__s: 23.5rem;
+$break_p__md: 45rem;
+$break_p__lg: 63.75rem;
+$break_p__xl: 75.625rem;
+
+
+@mixin breaks($breakpoint) {
+  @if $breakpoint==x-large {
+    @media only screen and (min-width: $break_p__xl) {
+      @content;
+    }
+  }
+  @if $breakpoint==large {
+    @media only screen and (min-width: $break_p__lg) {
+      @content;
+    }
+  }
+  @if $breakpoint==medium {
+    @media only screen and (min-width: $break_p__md) {
+      @content;
+    }
+  }
+  @if $breakpoint==small {
+    @media only screen and (min-width: $break_p__s) {
+      @content;
+    }
+  }
+}
+
+$b_rad_small: 8px;
+$b_rad_large: 16px;
